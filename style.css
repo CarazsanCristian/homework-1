@@ -1,6 +1,10 @@
 body{
-    background-color: #FAF8EF;
+    margin: 30px 0;
+    padding: 0;
+    background: #faf8ef;
     color: #776e65;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
 }
 
 a {
@@ -10,10 +14,20 @@ a {
     cursor: pointer;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.65;
+}
+
 .container{
     width: 600px;
     margin: 0 auto;
 }
+
+
+/* ================ HEADING ================ */
+
 
 .heading{
     margin: 20px 0;
@@ -30,6 +44,7 @@ h1.title{
     display: block;
     float: left;
 }
+
 @media screen and (min-width: 481px){
     h1.title {
         font-size: 74px;
@@ -98,7 +113,6 @@ h1.title a {
 }
 
 .restart-button {
-    display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
     padding: 0 20px;
@@ -116,24 +130,8 @@ h2.subtitle {
     margin: 0;
 }
 
-.sorry{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-}
-.sorry h3{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 6px 12px;
-    transform:translate(-50%,-50%);
-    text-align: center;
-    margin: 0;
-    background: rgba(255, 255, 255, 0.35);
-}
+/* ================ THE GAME ================ */
+
 #game-container{
     width:600px;
     height: 600px;
@@ -167,3 +165,38 @@ h2.subtitle {
     background: rgba(238, 228, 218, 0.35);
 }
 
+/* ================ MY MESSAGE ================ */
+
+h3.sorry {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 6px 12px;
+    transform:translate(-50%,-50%);
+    text-align: center;
+    margin: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* ================ HOW TO PLAY ================ */
+
+.game-explanation {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+strong.important {
+    text-transform: uppercase;
+}
+
+/* ================ Made by ================ */
+
+.made-by{
+    border-top:1px dashed #CDC1B4;
+    border-bottom:1px dashed #CDC1B4;
+    padding: 10px 0;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
