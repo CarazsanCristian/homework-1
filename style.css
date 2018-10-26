@@ -24,6 +24,11 @@ p {
     width: 600px;
     margin: 0 auto;
 }
+@media screen and (max-width: 670px){
+    .container {
+        width: 280px;
+    }
+}
 
 
 /* ================ HEADING ================ */
@@ -45,14 +50,14 @@ h1.title{
     float: left;
 }
 
-@media screen and (min-width: 481px){
+@media screen and (min-width: 671px){
     h1.title {
         font-size: 74px;
         line-height: 66px;
     }
 }
 
-@media screen and (max-width: 520px){
+@media screen and (max-width: 670px){
     h1.title {
         font-size: 27px;
         margin-top: 15px;
@@ -143,8 +148,22 @@ h2.subtitle {
     position: relative;
 }
 
+@media screen and (max-width: 670px){
+    #game-container {
+        margin: 17px auto;
+        position: relative;
+        padding: 10px;
+        width: 280px;
+        height: 280px;
+    }
+}
+
 .row{
     margin-bottom: 15px;
+}
+
+@media screen and (max-width: 670px){
+    margin-bottom: 10px;
 }
 
 .row::after{
@@ -165,6 +184,14 @@ h2.subtitle {
     background: rgba(238, 228, 218, 0.35);
 }
 
+@media screen and (max-width: 670px){
+    .cell {
+        width: 57.5px;
+        height: 57.5px;
+        margin-right: 10px;
+    }
+}
+
 /* ================ MY MESSAGE ================ */
 
 h3.sorry {
@@ -178,6 +205,13 @@ h3.sorry {
     z-index: 2;
     background: rgba(255, 255, 255, 0.35);
 }
+
+@media screen and (max-width: 670px){
+    h3.sorry{
+        font-size: 14px;
+        line-height: 18px;
+    }
+}    
 
 /* ================ HOW TO PLAY ================ */
 
