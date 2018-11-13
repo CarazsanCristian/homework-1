@@ -1,10 +1,16 @@
-body{
+body {
     margin: 30px 0;
     padding: 0;
     background: #faf8ef;
     color: #776e65;
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 18px;
+}
+
+@media screen and (max-width: 480px) {
+    html, body {
+        font-size: 15px;
+    }
 }
 
 a {
@@ -20,44 +26,44 @@ p {
     line-height: 1.65;
 }
 
-.container{
-    width: 600px;
+.container {
+    width: 500px;
     margin: 0 auto;
 }
-@media screen and (max-width: 670px){
+
+@media screen and (max-width: 670px) {
     .container {
         width: 280px;
     }
 }
 
-
 /* ================ HEADING ================ */
 
-
-.heading{
+.heading {
     margin: 20px 0;
 }
 
-.heading::after{
-    content:'';
+.heading::after {
+    content: '';
     display: block;
     clear: both;
 }
-h1.title{
+
+h1.title {
     font-weight: bold;
     margin: 0;
     display: block;
     float: left;
 }
 
-@media screen and (min-width: 671px){
+@media screen and (min-width: 671px) {
     h1.title {
         font-size: 74px;
         line-height: 66px;
     }
 }
 
-@media screen and (max-width: 670px){
+@media screen and (max-width: 670px) {
     h1.title {
         font-size: 27px;
         margin-top: 15px;
@@ -130,6 +136,16 @@ h1.title a {
     float: right;
 }
 
+@media screen and (max-width: 520px) {
+    .restart-button {
+        width: 35%;
+        padding: 0;
+        display: block;
+        box-sizing: border-box;
+        margin-top: 2px;
+    }
+}
+
 h2.subtitle {
     font-size: 1em;
     margin: 0;
@@ -137,9 +153,9 @@ h2.subtitle {
 
 /* ================ THE GAME ================ */
 
-#game-container{
-    width:600px;
-    height: 600px;
+#game-container {
+    width: 500px;
+    height: 500px;
     background-color: #BBADA0;
     padding: 15px;
     border-radius: 6px;
@@ -148,7 +164,7 @@ h2.subtitle {
     position: relative;
 }
 
-@media screen and (max-width: 670px){
+@media screen and (max-width: 670px) {
     #game-container {
         margin: 17px auto;
         position: relative;
@@ -158,60 +174,50 @@ h2.subtitle {
     }
 }
 
-.row{
+.row {
     margin-bottom: 15px;
 }
 
-@media screen and (max-width: 670px){
-    margin-bottom: 10px;
+@media screen and (max-width: 670px) {
+    .row {
+        margin-bottom: 10px
+    }
 }
 
-.row::after{
-    content:'';
+.row::after {
+    content: '';
     display: block;
     clear: both;
 }
+
 .cell:last-child {
     margin-right: 0;
 }
-.cell{
-    width:131.25px;
-    height:131.25px;
+
+.cell {
+    width: 106.25px;
+    height: 106.25px;
     float: left;
     box-sizing: border-box;
     border-radius: 3px;
     margin-right: 15px;
     background: rgba(238, 228, 218, 0.35);
+    text-align: center;
+    padding: 4px;
+    font-size: 55px;
+    line-height: 106px;
+    font-weight: bold;
 }
 
-@media screen and (max-width: 670px){
+@media screen and (max-width: 670px) {
     .cell {
         width: 57.5px;
         height: 57.5px;
         margin-right: 10px;
+        font-size: 30px;
+        line-height: 46px;
     }
 }
-
-/* ================ MY MESSAGE ================ */
-
-h3.sorry {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 6px 12px;
-    transform:translate(-50%,-50%);
-    text-align: center;
-    margin: 0;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.35);
-}
-
-@media screen and (max-width: 670px){
-    h3.sorry{
-        font-size: 14px;
-        line-height: 18px;
-    }
-}    
 
 /* ================ HOW TO PLAY ================ */
 
@@ -227,10 +233,133 @@ strong.important {
 
 /* ================ Made by ================ */
 
-.made-by{
-    border-top:1px dashed #CDC1B4;
-    border-bottom:1px dashed #CDC1B4;
+.made-by {
+    border-top: 1px dashed #CDC1B4;
+    border-bottom: 1px dashed #CDC1B4;
     padding: 10px 0;
     margin: 20px 0 0 0;
     text-align: center;
+}
+
+/* ================ Game Over ================ */
+
+.game-over {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.game-over .game-over-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #8f7a66;
+    border: 1px solid #8f7a66;
+    padding: 15px 30px;
+    border-radius: 4px;
+    background-color: lightgoldenrodyellow;
+    z-index: 3;
+    font-size: 26px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    margin: 0;
+    transform: translate(-50%, -50%);
+    cursor: default;
+}
+.game-over-info button{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 24px auto 0 auto;
+    cursor: pointer;
+    outline: none;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    display: block;
+    text-align: center;
+}
+
+@media screen and (max-width: 670px) {
+    .game-over h3 {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+/* ================ Tile ================ */
+
+.tile-2 {
+    background-color: #faf8ef;
+}
+
+.tile-4 {
+    background-color: #ede0c8;
+}
+
+.tile-8 {
+    background-color: #f2b179;
+    color: #f9f6f2;
+}
+
+.tile-16 {
+    background-color: #f59563;
+    color: #f9f6f2;
+}
+
+.tile-32 {
+    background-color: #f67c5f;
+    color: #f9f6f2;
+}
+
+.tile-64 {
+    background-color: #f65e3b;
+    color: #f9f6f2;
+}
+
+.tile-128 {
+    background-color: #edcf72;
+    color: #f9f6f2;
+}
+
+.tile-256 {
+    background-color: #edcf72;
+    color: #f9f6f2;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048)
+}
+
+.tile-512 {
+    background-color: #edc850;
+    color: #f9f6f2;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048)
+}
+
+.btn-add-tile {
+    font-size: inherit;
+    font-weight: bold;
+    margin: 24px auto 0 auto;
+    cursor: pointer;
+    outline: none;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    display: block;
+    text-align: center;
+}
+
+.btn-add-tile:hover {
+    background-color: #BBADA0;
 }

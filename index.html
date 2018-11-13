@@ -22,6 +22,7 @@
                 <p>Join the numbers and get to the <strong>2048 tile!</strong></p>
             </div>
         </div>
+        <button class="btn-add-tile" onclick="addTile()">Add tile</button>
         <div id="game-container">
             <div class="row">
                 <div class="cell"></div>
@@ -47,7 +48,15 @@
                 <div class="cell"></div>
                 <div class="cell"></div>
             </div>
-            <h3 class="sorry">We're sorry but JavaScript is not added yet.</h3>
+            <div class="game-over">
+                <div class="game-over-info">
+                        <h3>Game over!</h3>
+                        <button onclick="restartGame()">Retry</button>
+                </div>
+                
+                
+            </div>
+
         </div>
         <p class="game-explanation">
             <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles.
@@ -57,7 +66,9 @@
             <i>A homework done by <strong>Cărăzsan Cristian</strong></i>
         </div>
     </div>
-    </div>
+
+    <script src="jquery-3-3-1.js"></script>
+    <script src="game.js"></script>
 </body>
 
 </html>
